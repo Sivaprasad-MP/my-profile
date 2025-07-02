@@ -57,24 +57,17 @@ section {
   border-radius: 10px;
 }
 
-ul {
-  list-style: square inside;
-  padding-left: 10px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #00ff9c;
-  color: #000;
+ul li a {
+  color: white;
   text-decoration: none;
-  border-radius: 5px;
   font-weight: bold;
 }
 
-.btn:hover {
-  background: #00cc80;
+ul li a:hover {
+  color: #00ff9c; /* Optional: bright green on hover */
+  text-decoration: underline;
 }
+
 
 footer {
   text-align: center;
