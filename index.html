@@ -349,18 +349,56 @@
 </section>
 
 
-    <footer>
-      © <span id="year"></span> Sivaprasad MP — Built for cybersecurity roles • <span class="muted">Made with focus on clarity & reproducible findings</span>
-    </footer>
-  </div>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
 
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <style>
+    footer {
+      padding: 20px;
+      text-align: center;
+      color: #888;
+      font-size: 14px;
+    }
+    .muted { opacity: 0.7; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Typed text element -->
+  <h1 id="typed"></h1>
+
+
+  <!-- Footer -->
+  <footer>
+    © <span id="year"></span> Sivaprasad MP — Built for cybersecurity roles • 
+    <span class="muted">Made with focus on clarity & reproducible findings</span>
+  </footer>
+
+
+  <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
   <script>
     // Init AOS
-    AOS.init({duration:700,once:true,easing:'ease-in-out'});
+    AOS.init({
+      duration: 700,
+      once: true,
+      easing: 'ease-in-out'
+    });
 
     // Typed.js intro
-    const typed = new Typed('#typed', {
+    new Typed('#typed', {
       strings: [
         'Cybersecurity Professional',
         'Penetration Tester',
@@ -377,16 +415,18 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Contact form handler (simple client-side demo)
+    // Contact form handler
     function handleContact(e){
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const msg = document.getElementById('message').value.trim();
-      if(!name || !email || !msg){alert('Please fill all fields');return}
-      // For GitHub Pages — no backend. Provide mailto fallback
-      const subject = encodeURIComponent('Portfolio contact from '+name);
-      const body = encodeURIComponent('Name: '+name+"\nEmail: "+email+"\n\n"+msg);
+      if(!name || !email || !msg){
+        alert('Please fill all fields');
+        return;
+      }
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent('Name: ' + name + "\nEmail: " + email + "\n\n" + msg);
       window.location.href = `mailto:sivaprasadmp21@gmail.com?subject=${subject}&body=${body}`;
     }
   </script>
