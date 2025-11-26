@@ -385,50 +385,5 @@
     <span class="muted">Made with focus on clarity & reproducible findings</span>
   </footer>
 
-
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-  <script>
-    // Init AOS
-    AOS.init({
-      duration: 700,
-      once: true,
-      easing: 'ease-in-out'
-    });
-
-    // Typed.js intro
-    new Typed('#typed', {
-      strings: [
-        'Cybersecurity Professional',
-        'Penetration Tester',
-        'Bug Bounty Hunter',
-        'CTF Enthusiast',
-        'Network Security Researcher'
-      ],
-      typeSpeed: 55,
-      backSpeed: 30,
-      backDelay: 1600,
-      loop: true
-    });
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Contact form handler
-    function handleContact(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const msg = document.getElementById('message').value.trim();
-      if(!name || !email || !msg){
-        alert('Please fill all fields');
-        return;
-      }
-      const subject = encodeURIComponent('Portfolio contact from ' + name);
-      const body = encodeURIComponent('Name: ' + name + "\nEmail: " + email + "\n\n" + msg);
-      window.location.href = `mailto:sivaprasadmp21@gmail.com?subject=${subject}&body=${body}`;
-    }
-  </script>
 </body>
 </html>
