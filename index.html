@@ -349,41 +349,46 @@
 </section>
 
 
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+    <footer>
+      © <span id="year"></span> Sivaprasad MP — Built for cybersecurity roles • <span class="muted">Made with focus on clarity & reproducible findings</span>
+    </footer>
+  </div>
 
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Init AOS
+    AOS.init({duration:700,once:true,easing:'ease-in-out'});
 
-  <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    // Typed.js intro
+    const typed = new Typed('#typed', {
+      strings: [
+        'Cybersecurity Professional',
+        'Penetration Tester',
+        'Bug Bounty Hunter',
+        'CTF Enthusiast',
+        'Network Security Researcher'
+      ],
+      typeSpeed: 55,
+      backSpeed: 30,
+      backDelay: 1600,
+      loop: true
+    });
 
-  <style>
-    footer {
-      padding: 20px;
-      text-align: center;
-      color: #888;
-      font-size: 14px;
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form handler (simple client-side demo)
+    function handleContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      if(!name || !email || !msg){alert('Please fill all fields');return}
+      // For GitHub Pages — no backend. Provide mailto fallback
+      const subject = encodeURIComponent('Portfolio contact from '+name);
+      const body = encodeURIComponent('Name: '+name+"\nEmail: "+email+"\n\n"+msg);
+      window.location.href = `mailto:sivaprasadmp21@gmail.com?subject=${subject}&body=${body}`;
     }
-    .muted { opacity: 0.7; }
-  </style>
-</head>
-
-<body>
-
-  <!-- Typed text element -->
-  <h1 id="typed"></h1>
-
-
-  <!-- Footer -->
-  <footer>
-    © <span id="year"></span> Sivaprasad MP — Built for cybersecurity roles • 
-    <span class="muted">Made with focus on clarity & reproducible findings</span>
-  </footer>
-
+  </script>
 </body>
 </html>
