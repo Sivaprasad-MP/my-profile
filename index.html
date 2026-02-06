@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -344,8 +345,7 @@
 </section>
 
 
-
-    <footer>
+<footer>
       © <span id="year"></span> Sivaprasad MP — Built for cybersecurity roles • <span class="muted">Made with focus on clarity & reproducible findings</span>
     </footer>
   </div>
@@ -359,11 +359,10 @@
     const typed = new Typed('#typed', {
       strings: [
         'Cybersecurity Professional',
-        'Vulnerability Assessment & Penetration Tester',
+        'Penetration Tester',
         'Bug Bounty Hunter',
-        'Internal Auditor',
-	'GRC analysis',
-        'Network Security'
+        'CTF Enthusiast',
+        'Network Security Researcher'
       ],
       typeSpeed: 55,
       backSpeed: 30,
@@ -374,7 +373,16 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Contact form handler (simple client-side demo)
+    function handleContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      if(!name || !email || !msg){alert('Please fill all fields');return}
+      // For GitHub Pages — no backend. Provide mailto fallback
+      const subject = encodeURIComponent('Portfolio contact from '+name);
+      const body = encodeURIComponent('Name: '+name+"\nEmail: "+email+"\n\n"+msg);
+      window.location.href = `mailto:sivaprasadmp21@gmail.com?subject=${subject}&body=${body}`;
     }
   </script>
-</body>
-</html>
