@@ -1,0 +1,397 @@
+@@ -0,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sivaprasad MP — Cybersecurity Portfolio</title>
+  <meta name="description" content="Sivaprasad MP — Penetration Tester | Bug Bounty | CTF Enthusiast. Portfolio showcasing projects, skills, and certifications." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a2d9b7f9d6.js" crossorigin="anonymous"></script>
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <style>
+    :root{
+      --bg:#071017;
+      --card:#0b1720;
+      --muted:#9aa8b2;
+      --accent:#19d3ff; /* neon cyan */
+      --accent-2:#7cff6f; /* neon green */
+      --glass: rgba(255,255,255,0.03);
+      --maxw:1100px;
+      --mono:"Source Code Pro", monospace;
+      --ui:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#041018 0%, #071017 60%);color:#e6f6fb;font-family:var(--ui);-webkit-font-smoothing:antialiased}
+
+    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    /* NAV */
+    nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#001;box-shadow:0 4px 18px rgba(0,0,0,0.6)}
+    .navlinks{display:flex;gap:14px;align-items:center}
+    .navlinks a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+    .navlinks a:hover{color:var(--accent)}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;padding:36px 0}
+    .hero-left{padding-right:8px}
+    h1{font-size:34px;margin:0 0 8px;color:#fff}
+    .typed{color:var(--accent);font-family:var(--mono);font-weight:700}
+    p.lead{color:var(--muted);line-height:1.6;margin:12px 0 18px}
+
+    .cta{display:flex;gap:12px;align-items:center}
+    .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001;padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer;text-decoration:none}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+
+    .socials{display:flex;gap:10px;margin-top:12px}
+    .socials a{color:var(--muted);font-size:18px;text-decoration:none}
+    .socials a:hover{color:var(--accent)}
+
+    /* PROFILE CARD */
+    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 6px 30px rgba(2,12,20,0.6);border:1px solid rgba(255,255,255,0.02)}
+    .profile-img{width:100%;height:100%;border-radius:12px;object-fit:cover;border:3px solid rgba(255,255,255,0.03)}
+    .profile-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:8px}
+    .avatar{width:240px;height:240px;border-radius:999px;overflow:hidden;display:flex;align-items:center;justify-content:center;border:4px solid rgba(25,211,255,0.12);box-shadow:0 10px 40px rgba(25,211,255,0.06)}
+
+    /* SECTIONS */
+    section{margin-top:26px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+    /* SKILLS */
+    .skills-list{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{background:var(--glass);padding:8px 10px;border-radius:8px;font-weight:600;color:var(--muted);font-size:13px}
+
+    /* PROJECTS */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .proj{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .proj h4{margin:0 0 6px}
+    .tech{color:var(--muted);font-size:13px}
+    .proj-actions{display:flex;gap:8px;margin-top:10px}
+    .chip{padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:13px;color:var(--muted)}
+
+    /* CERTS */
+    .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}
+    .contact-item{display:flex;gap:10px;align-items:center;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+
+    footer{margin-top:40px;padding:18px 0;color:var(--muted);text-align:center}
+
+    /* responsive */
+    @media(max-width:960px){
+      .hero{grid-template-columns:1fr 320px}
+      .projects{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .hero-left{order:2}
+      .avatar{width:200px;height:200px}
+    }
+
+    @media(max-width:640px){
+      .hero{grid-template-columns:1fr;gap:16px}
+      .avatar{width:160px;height:160px}
+      nav{flex-direction:column;align-items:flex-start}
+      .navlinks{margin-top:8px}
+    }
+
+    /* small utility */
+    .muted{color:var(--muted)}
+    .tag{font-family:var(--mono);font-size:12px;color:var(--accent);}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <div style="font-weight:700">Sivaprasad MP</div>
+          <div class="muted" style="font-size:13px">Cybersecurity • Penetration Testing • Bug Bounty Hunter</div>
+        </div>
+      </div>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <main class="hero">
+      <div class="hero-left">
+        <h1>Hi, I’m <span style="color:var(--accent-2)">Sivaprasad</span> — <span class="tag">MSc Cybersecurity</span></h1>
+        <div style="font-size:18px;line-height:1.2"> <span id="typed" class="typed"></span></div>
+        <p class="lead">Results-driven offensive security practitioner with a background in penetration testing, network exploitation, and vulnerability research. Certified (CEH, CPT) — I convert findings into actionable remediation and concise reports.</p>
+
+        <div class="cta">
+          <a href="Resume_SivaprasadMP.pdf" class="btn" download>📄 Download Resume</a>
+          <a href="#contact" class="btn ghost">✉️ Contact</a>
+        </div>
+
+        <div class="socials" aria-hidden="false">
+          <a href="https://linkedin.com/in/sivaprasad-mp" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a href="mailto:sivaprasadmp21@gmail.com" title="Email"><i class="fas fa-envelope fa-lg"></i></a>
+          <a href="#" title="TryHackMe (replace)"><i class="fas fa-shield-alt fa-lg"></i></a>
+          <a href="#" title="HackTheBox (replace)"><i class="fas fa-dragon fa-lg"></i></a>
+        </div>
+
+        <div style="margin-top:18px;color:var(--muted);font-size:13px">Based in Palakkad, Kerala, India — Open to entry-level cybersecurity roles & internships.</div>
+      </div>
+
+      <aside class="card profile-wrap" data-aos="fade-left">
+        <div class="avatar">
+          <!-- Replace with your image file in repo root e.g. avatar.jpg -->
+          <img src="images/avatar.jpg" alt="Sivaprasad avatar" class="profile-img" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300.png?text=Avatar'"/>
+        </div>
+        <div style="text-align:center">
+          <div style="font-weight:700">Sivaprasad MP</div>
+          <div class="muted" style="font-size:13px">MSc Cybersecurity | CEH | CPT</div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="card" data-aos="fade-up">
+        <h3>About Me</h3>
+        <p class="muted">I am a focused cybersecurity researcher and penetration tester with hands-on experience in web application & network security. I build tools for vulnerability discovery and actively participate in CTFs and bug bounty programs. My work emphasizes reproducible findings, clear technical write-ups, and pragmatic remediation guidance.</p>
+
+        <div class="grid-2" style="margin-top:12px">
+          <div>
+            <strong>Education</strong>
+            <div class="muted" style="margin-top:8px">MSc. Cybersecurity — Bharathiar University (Sep 2023 – Mar 2025)</div>
+            <div class="muted">BSc. Computer Science — Calicut University (Jul 2019 – May 2022)</div>
+          </div>
+
+          <div>
+            <strong>Experience</strong>
+            <div class="muted" style="margin-top:8px">Internship: OT Cybersecurity Intern — Consyst Digital (Mar 2023 – Jul 2023). Focused on securing OT systems, threat detection, and system hardening.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h3>Skills & Tools</h3>
+      <div class="card" data-aos="fade-up">
+        <strong>Core Expertise</strong>
+        <div class="skills-list" style="margin-top:10px">
+          <div class="skill">Vulnerability Assessment</div>
+          <div class="skill">Penetration Testing</div>
+          <div class="skill">Network Security</div>
+          <div class="skill">Web App Security</div>
+          <div class="skill">Bug Bounty</div>
+          <div class="skill">Python Scripting</div>
+          <div class="skill">CTF Challenges</div>
+          <div class="skill">Networking</div>
+          <div class="skill">Python Programming</div>
+          <div class="skill">System hardware maintenance</div>
+        </div>
+
+        <div style="margin-top:12px"><strong>Tools & Platforms</strong>
+          <div class="skills-list" style="margin-top:8px">
+            <div class="skill">Kali Linux</div>
+            <div class="skill">Burp Suite</div>
+            <div class="skill">Nmap</div>
+            <div class="skill">Wireshark</div>
+            <div class="skill">Nessus</div>
+            <div class="skill">Netcat</div>
+            <div class="skill">Fuzzers</div>
+            <div class="skill">Nessus</div>
+            <div class="skill">Metasploit</div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px"><strong>Soft Skills</strong>
+          <div class="skills-list" style="margin-top:8px">
+            <div class="skill">Time Management</div>
+            <div class="skill">Research & Development</div>
+            <div class="skill">Adaptability</div>
+            <div class="skill">Continuous Learning</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h3>Projects</h3>
+      <div class="projects" data-aos="fade-up">
+        <article class="proj">
+          <h4>IoT Dashboard Scanner & Vulnerability Analyzer</h4>
+          <div class="tech">Python • Flask • HTML • Nmap</div>
+          <p class="muted" style="margin-top:8px">Developed a scanner to discover exposed IoT dashboards and automated vulnerability checks. Included a vulnerability scoring system and CSV/JSON export for reporting.</p>
+          <div class="proj-actions">
+            <a class="chip" href="#"></a>
+            <a class="chip" href="#"></a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <h4>Honeypot-based Network Security</h4>
+          <div class="tech">Python • iptables • ELK</div>
+          <p class="muted" style="margin-top:8px">Built a dynamic honeypot system to log intrusion attempts and automatically update firewall rules. Designed for small enterprise topology simulations.</p>
+          <div class="proj-actions">
+            <a class="chip" href="#"></a>
+            <a class="chip" href="#"></a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <h4>Turf Finding Web Application</h4>
+          <div class="tech">PHP • MySQL • Bootstrap</div>
+          <p class="muted" style="margin-top:8px">Full-stack booking platform with role-based access control, booking workflows, and basic input validation. Demonstrated secure session handling and prepared a security checklist for the app.</p>
+          <div class="proj-actions">
+            <a class="chip" href="#"></a>
+          </div>
+        </article>
+
+        <!--
+        <article class="proj">
+          <h4>Tools & Scripts Collection</h4>
+          <div class="tech">Python • Bash</div>
+          <p class="muted" style="margin-top:8px">A set of small tools for automating reconnaissance and report generation used across multiple lab engagements.</p>
+          <div class="proj-actions">
+            <a class="chip" href="#">Repo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+        --!>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certs">
+      <h3>Certifications</h3>
+      <div class="card" data-aos="fade-up">
+        <div class="cert-grid">
+          <div class="chip">CEH — Certified Ethical Hacker, EC-Council</div>
+          <div class="chip">CPT — Certified Penetration Tester</div>
+          <div class="chip">CAP — AppSec Practitioner</div>
+          <div class="chip">Web App Pentesting & Bug Bounty</div>
+          <div class="chip">Honors Diploma — Hardware & Networking</div>
+        </div>
+        <div style="margin-top:16px; text-align:right;">
+        <a href="certifications.html" class="btn">More →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+      <h3>Achievements</h3>
+      <div class="card" data-aos="fade-up">
+        <ul style="margin:0;padding-left:18px;color:var(--muted)">
+          <li>Earned a $50 bounty for a critical authentication issue in a password reset flow.</li>
+          <li>Reported multiple rate-limiting & email verification vulnerabilities during responsible disclosures.</li>
+          <li>Active contributor to CTFs and platform challenges (HTB, THM).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+  <h3>Contact</h3>
+  <div class="card" data-aos="fade-up">
+    <div class="contact-grid">
+      <!-- Left Column: Basic Contact Info -->
+      <div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <strong>Email</strong>
+            <div class="muted">***********@gmail.com</div>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <strong>Mobile</strong>
+            <div class="muted">+91 **********</div>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Location</strong>
+            <div class="muted">Palakkad, Kerala, India</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Profiles -->
+      <div>
+        <strong>Profiles</strong>
+        <div style="margin-top:8px" class="skills-list">
+          <a class="skill" href="https://linkedin.com/in/sivaprasad-mp" target="_blank">linkedin</a>
+          <a class="skill" href="https://github.com/sivaprasad-mp" target="_blank">GitHub</a>
+          <a class="skill" href="https://tryhackme.com/p/SivaprasadMP" target="_blank">TryHackMe</a>
+          <a class="skill" href="https://app.hackthebox.com/profile/1137416" target="_blank">HackTheBox</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <footer>
+      © <span id="year"></span> Sivaprasad MP — Built for cybersecurity roles • <span class="muted">Made with focus on clarity & reproducible findings</span>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Init AOS
+    AOS.init({duration:700,once:true,easing:'ease-in-out'});
+
+    // Typed.js intro
+    const typed = new Typed('#typed', {
+      strings: [
+        'Cybersecurity Professional',
+        'Penetration Tester',
+        'Bug Bounty Hunter',
+        'CTF Enthusiast',
+        'Network Security Researcher'
+      ],
+      typeSpeed: 55,
+      backSpeed: 30,
+      backDelay: 1600,
+      loop: true
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form handler (simple client-side demo)
+    function handleContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      if(!name || !email || !msg){alert('Please fill all fields');return}
+      // For GitHub Pages — no backend. Provide mailto fallback
+      const subject = encodeURIComponent('Portfolio contact from '+name);
+      const body = encodeURIComponent('Name: '+name+"\nEmail: "+email+"\n\n"+msg);
+      window.location.href = `mailto:sivaprasadmp21@gmail.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
