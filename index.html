@@ -1,388 +1,1156 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sivaprasad MP — Cybersecurity Portfolio</title>
-  <meta name="description" content="Sivaprasad MP — VAPT | GRC | Audtor. Portfolio showcasing projects, skills, and certifications." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <!-- AOS (Animate on Scroll) -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <!-- Font Awesome for icons -->
-  <script src="https://kit.fontawesome.com/a2d9b7f9d6.js" crossorigin="anonymous"></script>
-  <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <title>Sivaprasad MP | Cybersecurity Analyst</title>
 
-  <style>
-    :root{
-      --bg:#071017;
-      --card:#0b1720;
-      --muted:#9aa8b2;
-      --accent:#19d3ff; /* neon cyan */
-      --accent-2:#7cff6f; /* neon green */
-      --glass: rgba(255,255,255,0.03);
-      --maxw:1100px;
-      --mono:"Source Code Pro", monospace;
-      --ui:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue";
-    }
+    <meta name="description"
+          content="Sivaprasad MP — Cybersecurity Analyst focused on VAPT, GRC, security assessment and cybersecurity auditing.">
 
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#041018 0%, #071017 60%);color:#e6f6fb;font-family:var(--ui);-webkit-font-smoothing:antialiased}
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600&display=swap"
+          rel="stylesheet">
 
-    /* NAV */
-    nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#001;box-shadow:0 4px 18px rgba(0,0,0,0.6)}
-    .navlinks{display:flex;gap:14px;align-items:center}
-    .navlinks a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
-    .navlinks a:hover{color:var(--accent)}
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;padding:36px 0}
-    .hero-left{padding-right:8px}
-    h1{font-size:34px;margin:0 0 8px;color:#fff}
-    .typed{color:var(--accent);font-family:var(--mono);font-weight:700}
-    p.lead{color:var(--muted);line-height:1.6;margin:12px 0 18px}
+    <!-- AOS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
-    .cta{display:flex;gap:12px;align-items:center}
-    .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001;padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer;text-decoration:none}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+    <style>
 
-    .socials{display:flex;gap:10px;margin-top:12px}
-    .socials a{color:var(--muted);font-size:18px;text-decoration:none}
-    .socials a:hover{color:var(--accent)}
+        :root {
+            --bg: #070b10;
+            --bg-soft: #0b1118;
+            --card: #0d141c;
+            --border: rgba(255,255,255,0.08);
 
-    /* PROFILE CARD */
-    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 6px 30px rgba(2,12,20,0.6);border:1px solid rgba(255,255,255,0.02)}
-    .profile-img{width:100%;height:100%;border-radius:12px;object-fit:cover;border:3px solid rgba(255,255,255,0.03)}
-    .profile-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:8px}
-    .avatar{width:240px;height:240px;border-radius:999px;overflow:hidden;display:flex;align-items:center;justify-content:center;border:4px solid rgba(25,211,255,0.12);box-shadow:0 10px 40px rgba(25,211,255,0.06)}
+            --text: #f1f5f9;
+            --muted: #94a3b8;
 
-    /* SECTIONS */
-    section{margin-top:26px}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+            --cyan: #22d3ee;
+            --green: #4ade80;
 
-    /* SKILLS */
-    .skills-list{display:flex;flex-wrap:wrap;gap:10px}
-    .skill{background:var(--glass);padding:8px 10px;border-radius:8px;font-weight:600;color:var(--muted);font-size:13px}
+            --max-width: 1100px;
+        }
 
-    /* PROJECTS */
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .proj{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    .proj h4{margin:0 0 6px}
-    .tech{color:var(--muted);font-size:13px}
-    .proj-actions{display:flex;gap:8px;margin-top:10px}
-    .chip{padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:13px;color:var(--muted)}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* CERTS */
-    .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+        html {
+            scroll-behavior: smooth;
+        }
 
-    /* CONTACT */
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}
-    .contact-item{display:flex;gap:10px;align-items:center;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Inter", sans-serif;
+            line-height: 1.7;
+        }
 
-    footer{margin-top:40px;padding:18px 0;color:var(--muted);text-align:center}
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    /* responsive */
-    @media(max-width:960px){
-      .hero{grid-template-columns:1fr 320px}
-      .projects{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-      .hero-left{order:2}
-      .avatar{width:200px;height:200px}
-    }
+        .container {
+            width: min(92%, var(--max-width));
+            margin: auto;
+        }
 
-    @media(max-width:640px){
-      .hero{grid-template-columns:1fr;gap:16px}
-      .avatar{width:160px;height:160px}
-      nav{flex-direction:column;align-items:flex-start}
-      .navlinks{margin-top:8px}
-    }
+        /* =========================
+           NAVIGATION
+        ========================== */
 
-    /* small utility */
-    .muted{color:var(--muted)}
-    .tag{font-family:var(--mono);font-size:12px;color:var(--accent);}
-  </style>
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(7, 11, 16, 0.88);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            min-height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-family: "Source Code Pro", monospace;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .brand span {
+            color: var(--cyan);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyan);
+        }
+
+        .nav-resume {
+            border: 1px solid rgba(34, 211, 238, 0.35);
+            padding: 7px 13px;
+            border-radius: 7px;
+            color: var(--cyan) !important;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: calc(100vh - 70px);
+
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+
+            align-items: center;
+            gap: 60px;
+
+            padding: 70px 0;
+        }
+
+        .hero-label {
+            color: var(--cyan);
+
+            font-family: "Source Code Pro", monospace;
+            font-size: 14px;
+            letter-spacing: 2px;
+
+            margin-bottom: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.05;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: var(--cyan);
+        }
+
+        .hero-role {
+            font-family: "Source Code Pro", monospace;
+            color: var(--green);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
+            font-weight: 600;
+            font-size: 14px;
+
+            transition: 0.25s;
+        }
+
+        .btn-primary {
+            background: var(--cyan);
+            color: #041014;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.15);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+
+        /* Hero image */
+
+        .hero-photo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-wrapper {
+            width: 270px;
+            height: 270px;
+
+            border-radius: 50%;
+
+            padding: 5px;
+
+            background: linear-gradient(
+                135deg,
+                var(--cyan),
+                transparent 55%,
+                var(--green)
+            );
+
+            box-shadow: 0 0 70px rgba(34, 211, 238, 0.08);
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid var(--bg);
+        }
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            padding: 80px 0;
+        }
+
+        section h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .section-label {
+            font-family: "Source Code Pro", monospace;
+            color: var(--cyan);
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            max-width: 720px;
+            margin-bottom: 35px;
+        }
+
+        /* =========================
+           CARDS
+        ========================== */
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+            padding: 28px;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: rgba(34, 211, 238, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-text {
+            font-size: 17px;
+            color: var(--muted);
+            max-width: 850px;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================== */
+
+        .experience {
+            display: grid;
+            gap: 22px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .company {
+            color: var(--cyan);
+        }
+
+        .date {
+            color: var(--green);
+
+            font-family: "Source Code Pro", monospace;
+            font-size: 13px;
+        }
+
+        .experience p {
+            color: var(--muted);
+            margin-top: 14px;
+        }
+
+        .experience ul {
+            margin-top: 14px;
+            padding-left: 20px;
+            color: var(--muted);
+        }
+
+        .experience li {
+            margin-bottom: 6px;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================== */
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .education-card h3 {
+            margin-bottom: 5px;
+        }
+
+        .education-year {
+            color: var(--green);
+            font-family: "Source Code Pro", monospace;
+            font-size: 13px;
+        }
+
+        /* =========================
+           CERTIFICATIONS
+        ========================== */
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .cert {
+            padding: 18px;
+
+            background: var(--bg-soft);
+            border: 1px solid var(--border);
+
+            border-radius: 9px;
+        }
+
+        .cert strong {
+            display: block;
+            color: var(--cyan);
+            margin-bottom: 4px;
+        }
+
+        .cert span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .cert-more {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-text {
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .skills-text strong {
+            color: var(--text);
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            border: 1px solid var(--border);
+            padding: 10px 15px;
+
+            border-radius: 8px;
+
+            color: var(--muted);
+
+            transition: 0.25s;
+        }
+
+        .contact-link:hover {
+            color: var(--cyan);
+            border-color: var(--cyan);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            padding: 30px 0;
+
+            text-align: center;
+
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+
+                gap: 40px;
+            }
+
+            .hero-description {
+                margin: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-photo {
+                order: -1;
+            }
+
+            .photo-wrapper {
+                width: 210px;
+                height: 210px;
+            }
+
+            .education-grid,
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <nav>
-      <div class="brand">
-        <div class="logo">S</div>
-        <div>
-          <div style="font-weight:700">Sivaprasad MP</div>
-          <div class="muted" style="font-size:13px">Cyber Security • VAPT • GRC • Bug Bounty Hunter</div>
-        </div>
-      </div>
-      <div class="navlinks">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#certs">Certifications</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
 
-    <!-- HERO -->
-    <main class="hero">
-      <div class="hero-left">
-        <h1>Hi, I’m <span style="color:var(--accent-2)">Sivaprasad MP</span> — <span class="tag">MSc Cybersecurity | CEH</span></h1>
-        <div style="font-size:18px;line-height:1.2"> <span id="typed" class="typed"></span></div>
-        <p class="lead">Cybersecurity Analyst with hands-on experience in vulnerability assessment, penetration testing, and security governance. Actively engaged in assessing web, network, VLAN, and Active Directory environments, with a strong focus on risk identification, compliance validation, and remediation guidance. Certified CEH with the ability to translate technical findings into clear, business-aligned security reports.</p>
+<!-- =========================
+     NAVIGATION
+========================== -->
 
-        
-        <div style="margin-top:18px;color:var(--muted);font-size:13px">Based in Palakkad, Kerala, India.</div>
-      </div>
-      
-        <div class="socials">
-         <a href="https://linkedin.com/in/sivaprasad-mp" target="_blank" title="LinkedIn">
-          <i class="fab fa-linkedin fa-lg"></i>
-         </a>
-         <a href="mailto:sivaprasadmp21@gmail.com" title="Email">
-          <i class="fas fa-envelope fa-lg"></i>
-         </a>
-         <a href="https://tryhackme.com/p/SivaprasadMP" target="_blank" title="TryHackMe">
-          <i class="fas fa-shield-halved fa-lg"></i>
-         </a>
-         <a href="https://app.hackthebox.com/profile/1137416" target="_blank" title="Hack The Box">
-          <i class="fas fa-cube fa-lg"></i>
-         </a>
-        </div>
+<nav>
+    <div class="container nav-inner">
 
+        <a href="#home" class="brand">
+            SIVA<span>.</span>
+        </a>
 
-      <aside class="card profile-wrap" data-aos="fade-left">
-        <div class="avatar">
-          <!-- Replace with your image file in repo root e.g. avatar.jpg -->
-          <img src="images/avatar.jpg" alt="Sivaprasad avatar" class="profile-img" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300.png?text=Avatar'"/>
-        </div>
-        <div style="text-align:center">
-          <div style="font-weight:700">Sivaprasad MP</div>
-          <div class="muted" style="font-size:13px">MSc Cybersecurity | CEH | VAPT | GRC</div>
-        </div>
-      </aside>
-    </main>
+        <ul class="nav-links">
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="card" data-aos="fade-up">
-        <h3>About Me</h3>
-        <p class="muted">Cybersecurity Analyst with hands-on experience in vulnerability assessment, penetration testing, and security governance. Skilled in assessing web applications, network infrastructure, VLANs, and Active Directory environments using both automated tools and manual techniques. Experienced in AD security reviews, GPO analysis, privilege audits, and system hardening based on CIS benchmarks. Actively involved in compliance assessments, risk analysis, and security documentation aligned with ISO 27001 and NIST CSF, with a strong ability to translate technical findings into clear, business-focused security recommendations.</p>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
 
-        <div  style="margin-top:12px">
-          <div>
-          <strong>Experience</strong>
+            <li>
+                <a href="resume.pdf"
+                   target="_blank"
+                   class="nav-resume">
+                    Resume
+                </a>
+            </li>
 
-         <div class="muted" style="margin-top:8px">
-           <b>Cybersecurity Analyst</b><br>
-		Mirox Cybersecurity PLTD (Oct 2025 – Present).<br>
-           	Performing vulnerability assessment and penetration testing across web applications, VLANs, and Active Directory environments. Involved in AD security testing, GPO reviews, privilege audits, compliance checks, and system hardening. Supporting GRC activities including risk assessments, gap analysis, and alignment with ISO 27001 and NIST CSF.
-         </div>
-
-         <div class="muted" style="margin-top:8px">
-            <b>OT Cybersecurity Intern</b><br>
-		Consyst Digital (Mar 2023 – Jul 2023).<br>
-            	Assisted in securing industrial OT environments through vulnerability identification, system hardening, network segmentation, and access control support, while contributing to security monitoring and incident response activities.
-          </div>
-          </div>
-
-          <div>
-            <strong>Education</strong>
-            <div class="muted" style="margin-top:8px">MSc. Cybersecurity — Bharathiar University (Sep 2023 – Mar 2025)</div>
-            <div class="muted">BSc. Computer Science — Calicut University (Jul 2019 – May 2022)</div>
-          </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-  <h3>Skills & Tools</h3>
-  <div class="card" data-aos="fade-up">
-
-    <strong>Core Expertise</strong>
-    <div class="skills-list" style="margin-top:10px">
-      <div class="skill">Vulnerability Assessment</div>
-      <div class="skill">Penetration Testing (VAPT)</div>
-      <div class="skill">Web Application Security</div>
-      <div class="skill">Network & VLAN Security</div>
-      <div class="skill">Active Directory Security</div>
-      <div class="skill">GPO Review & Privilege Audits</div>
-      <div class="skill">System Hardening (CIS Benchmarks)</div>
-      <div class="skill">Risk Assessment & Gap Analysis</div>
-      <div class="skill">Bug Bounty & CTFs</div>
-      <div class="skill">Security Documentation & Reporting</div>
-    </div>
-
-    <div style="margin-top:12px">
-      <strong>Tools & Platforms</strong>
-      <div class="skills-list" style="margin-top:8px">
-        <div class="skill">Kali Linux</div>
-        <div class="skill">Nmap</div>
-        <div class="skill">Burp Suite</div>
-        <div class="skill">Nessus</div>
-        <div class="skill">OpenVAS</div>
-        <div class="skill">Metasploit</div>
-        <div class="skill">Wireshark</div>
-        <div class="skill">Netcat</div>
-        <div class="skill">OWASP ZAP</div>
-        <div class="skill">SQLmap</div>
-        <div class="skill">Nikto</div>
-        <div class="skill">Hydra</div>
-      </div>
-    </div>
-
-    <div style="margin-top:12px">
-      <strong>Governance & Compliance</strong>
-      <div class="skills-list" style="margin-top:8px">
-        <div class="skill">ISO/IEC 27001</div>
-        <div class="skill">NIST Cybersecurity Framework</div>
-        <div class="skill">Policy & SOP Development</div>
-        <div class="skill">Audit Evidence Collection</div>
-        <div class="skill">Vendor Risk Assessment</div>
-      </div>
-    </div>
-
-    <div style="margin-top:12px">
-      <strong>Professional Skills</strong>
-      <div class="skills-list" style="margin-top:8px">
-        <div class="skill">Analytical Thinking</div>
-        <div class="skill">Clear Technical Communication</div>
-        <div class="skill">Time Management</div>
-        <div class="skill">Continuous Learning</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-    <!-- PROJECTS -->
-<section id="projects">
-  <h3>Projects</h3>
-  <div class="card" data-aos="fade-up">
-
-    <div class="muted" style="margin-top:6px">
-      <strong>Academic Projects (3)</strong><br>
-      College-level projects focused on web development, basic security concepts, and system design, including secure web application development and foundational vulnerability analysis.
-    </div>
-
-    <div class="muted" style="margin-top:12px">
-      <strong>Internship Project (1)</strong><br>
-      Hands-on project during OT Cybersecurity internship involving vulnerability identification, system hardening, and security improvements within an industrial environment.
-    </div>
-
-    <div class="muted" style="margin-top:12px">
-      <strong>Professional / Employment-Level Projects</strong><br>
-      Ongoing security assessments and client engagements involving vulnerability assessment, penetration testing, Active Directory security reviews, compliance validation, and risk-based security analysis.
-    </div>
-
-  </div>
-</section>
-
-
-    <!-- CERTIFICATIONS -->
-    <section id="certs">
-      <h3>Certifications</h3>
-      <div class="card" data-aos="fade-up">
-        <div class="cert-grid">
-          <div class="chip">CEH — Certified Ethical Hacker, EC-Council</div>
-          <div class="chip">CPT — Certified Penetration Tester</div>
-          <div class="chip">CAP — AppSec Practitioner</div>
-          <div class="chip">Web App Pentesting & Bug Bounty</div>
-          <div class="chip">Honors Diploma — Hardware & Networking</div>
-        </div>
-        <div style="margin-top:16px; text-align:right;">
-        <a href="certifications.html" class="btn">More →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACHIEVEMENTS -->
-    <section id="achievements">
-      <h3>Achievements</h3>
-      <div class="card" data-aos="fade-up">
-        <ul style="margin:0;padding-left:18px;color:var(--muted)">
-          <li>Earned a $50 bounty for a critical authentication issue in a password reset flow.</li>
-          <li>Reported multiple rate-limiting & email verification vulnerabilities during responsible disclosures.</li>
-          <li>Active contributor to CTFs and platform challenges (HTB, THM).</li>
         </ul>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-<section id="contact">
-  <h3>Contact</h3>
-  <div class="card" data-aos="fade-up">
-    <div class="contact-grid">
-
-      <!-- Left Column: Contact -->
-      <div>
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <div>
-            <strong>Email</strong>
-            <div class="muted">sivaprasadmp21@gmail.com</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Column: Profiles -->
-      <div>
-        <strong>Profiles</strong>
-        <div style="margin-top:8px" class="skills-list">
-          <a class="skill" href="https://linkedin.com/in/sivaprasad-mp" target="_blank">LinkedIn</a>
-          <a class="skill" href="https://tryhackme.com/p/SivaprasadMP" target="_blank">TryHackMe</a>
-          <a class="skill" href="https://app.hackthebox.com/profile/1137416" target="_blank">HackTheBox</a>
-        </div>
-      </div>
 
     </div>
-  </div>
+</nav>
+
+
+<main>
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section id="home">
+
+    <div class="container hero">
+
+        <div data-aos="fade-up">
+
+            <div class="hero-label">
+                CYBERSECURITY ANALYST
+            </div>
+
+            <h1>
+                Sivaprasad <span>MP</span>
+            </h1>
+
+            <div class="hero-role">
+                VAPT • GRC • SECURITY ASSESSMENT
+            </div>
+
+            <p class="hero-description">
+                Cybersecurity Analyst with hands-on experience in
+                vulnerability assessment, penetration testing,
+                security auditing and governance across web,
+                network and Active Directory environments.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="resume.pdf"
+                   target="_blank"
+                   class="btn btn-primary">
+
+                    <i class="fas fa-file-lines"></i>
+                    View Resume
+
+                </a>
+
+                <a href="#contact"
+                   class="btn btn-outline">
+
+                    <i class="fas fa-envelope"></i>
+                    Contact Me
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-photo"
+             data-aos="fade-left">
+
+            <div class="photo-wrapper">
+
+                <img src="images/avatar.jpg"
+                     alt="Sivaprasad MP">
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
+
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">
+            01 / ABOUT
+        </div>
+
+        <h2>About Me</h2>
+
+        <p class="about-text">
+
+            I am a Cybersecurity Analyst with practical experience
+            in vulnerability assessment, penetration testing,
+            cybersecurity auditing and GRC activities. My work
+            includes web application security, network and VLAN
+            assessments, Active Directory security, system
+            hardening, risk assessment, gap analysis and security
+            documentation. I focus on understanding security
+            weaknesses, validating their impact and supporting
+            practical remediation.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================== -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-label">
+            02 / EXPERIENCE
+        </div>
+
+        <h2>Professional Experience</h2>
+
+        <p class="section-intro">
+            My professional experience across cybersecurity
+            assessment, security auditing and OT security.
+        </p>
+
+
+        <div class="experience">
+
+            <!-- Mirox -->
+
+            <div class="card"
+                 data-aos="fade-up">
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <div class="experience-title">
+                            Cybersecurity Analyst
+                        </div>
+
+                        <div class="company">
+                            Mirox Cybersecurity PLTD
+                        </div>
+
+                    </div>
+
+                    <div class="date">
+                        Oct 2025 – Present
+                    </div>
+
+                </div>
+
+
+                <ul>
+
+                    <li>
+                        Perform vulnerability assessment and
+                        penetration testing across web applications,
+                        networks, VLANs and Active Directory
+                        environments.
+                    </li>
+
+                    <li>
+                        Conduct AD security reviews including GPO
+                        analysis, privilege audits and baseline
+                        configuration checks.
+                    </li>
+
+                    <li>
+                        Support GRC and cybersecurity audit activities
+                        including risk assessment, gap analysis,
+                        policy review and compliance evidence.
+                    </li>
+
+                    <li>
+                        Perform security configuration reviews and
+                        system hardening based on security benchmarks
+                        and organizational requirements.
+                    </li>
+
+                    <li>
+                        Support security investigations and digital
+                        forensic activities involving available
+                        system, memory and forensic evidence.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Consyst -->
+
+            <div class="card"
+                 data-aos="fade-up">
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <div class="experience-title">
+                            OT Cybersecurity Intern
+                        </div>
+
+                        <div class="company">
+                            Consyst Digital
+                        </div>
+
+                    </div>
+
+                    <div class="date">
+                        Mar 2023 – Jul 2023
+                    </div>
+
+                </div>
+
+
+                <ul>
+
+                    <li>
+                        Assisted with vulnerability identification
+                        and security assessment of OT environments.
+                    </li>
+
+                    <li>
+                        Supported system hardening, network
+                        segmentation and access-control activities.
+                    </li>
+
+                    <li>
+                        Contributed to security monitoring and
+                        incident response activities.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================== -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-label">
+            03 / EDUCATION
+        </div>
+
+        <h2>Education</h2>
+
+
+        <div class="education-grid">
+
+            <div class="card education-card"
+                 data-aos="fade-up">
+
+                <div class="education-year">
+                    2023 – 2025
+                </div>
+
+                <h3>
+                    MSc Cybersecurity
+                </h3>
+
+                <p class="muted">
+                    Bharathiar University
+                </p>
+
+            </div>
+
+
+            <div class="card education-card"
+                 data-aos="fade-up">
+
+                <div class="education-year">
+                    2019 – 2022
+                </div>
+
+                <h3>
+                    BSc Computer Science
+                </h3>
+
+                <p class="muted">
+                    Calicut University
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CERTIFICATIONS
+========================== -->
+
+<section id="certifications">
+
+    <div class="container">
+
+        <div class="section-label">
+            04 / CERTIFICATIONS
+        </div>
+
+        <h2>Certifications</h2>
+
+        <p class="section-intro">
+            Selected cybersecurity and technical certifications.
+        </p>
+
+
+        <div class="card"
+             data-aos="fade-up">
+
+            <div class="cert-grid">
+
+                <div class="cert">
+
+                    <strong>
+                        CEH
+                    </strong>
+
+                    <span>
+                        Certified Ethical Hacker — EC-Council
+                    </span>
+
+                </div>
+
+
+                <div class="cert">
+
+                    <strong>
+                        CPT
+                    </strong>
+
+                    <span>
+                        Certified Penetration Tester
+                    </span>
+
+                </div>
+
+
+                <div class="cert">
+
+                    <strong>
+                        CAP
+                    </strong>
+
+                    <span>
+                        Certified AppSec Practitioner
+                    </span>
+
+                </div>
+
+
+                <div class="cert">
+
+                    <strong>
+                        ISO/IEC 27001
+                    </strong>
+
+                    <span>
+                        Information Security Associate
+                    </span>
+
+                </div>
+
+
+                <div class="cert">
+
+                    <strong>
+                        Web Application Pentesting
+                    </strong>
+
+                    <span>
+                        Web Application Pentesting & Bug Bounty
+                    </span>
+
+                </div>
+
+
+                <div class="cert">
+
+                    <strong>
+                        Hardware & Networking
+                    </strong>
+
+                    <span>
+                        Honors Diploma in Computer Hardware and Networking
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="cert-more">
+
+                <a href="certifications.html"
+                   class="btn btn-outline">
+
+                    View All Certifications
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-label">
+            05 / SKILLS
+        </div>
+
+        <h2>Technical Skills</h2>
+
+        <div class="card"
+             data-aos="fade-up">
+
+            <p class="skills-text">
+
+                <strong>Cybersecurity:</strong>
+                Vulnerability Assessment, Penetration Testing,
+                Web Application Security, Network Security,
+                Active Directory Security, Security Hardening,
+                Digital Forensics, Cybersecurity Auditing,
+                Risk Assessment, Gap Analysis, Policy Review,
+                Compliance Assessment, ISO 27001 and NIST CSF.
+                Experienced with
+                <strong>
+                    Burp Suite, Nmap, Nessus, OpenVAS, Metasploit,
+                    Wireshark, OWASP ZAP, Nuclei, SQLmap, Nikto,
+                    Hydra and Kali Linux.
+                </strong>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-label">
+            06 / CONTACT
+        </div>
+
+        <h2>Let's Connect</h2>
+
+        <div class="card contact-card"
+             data-aos="fade-up">
+
+            <div>
+
+                <h3>
+                    Interested in connecting?
+                </h3>
+
+                <p class="muted">
+                    Feel free to reach out for cybersecurity
+                    opportunities, collaboration or professional
+                    discussions.
+                </p>
+
+            </div>
+
+
+            <div class="contact-links">
+
+                <a class="contact-link"
+                   href="mailto:sivaprasadmp21@gmail.com">
+
+                    <i class="fas fa-envelope"></i>
+                    Email
+
+                </a>
+
+
+                <a class="contact-link"
+                   href="https://linkedin.com/in/sivaprasad-mp"
+                   target="_blank"
+                   rel="noopener">
+
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+
+                </a>
+
+
+                <a class="contact-link"
+                   href="https://tryhackme.com/p/SivaprasadMP"
+                   target="_blank"
+                   rel="noopener">
+
+                    <i class="fas fa-shield-halved"></i>
+                    TryHackMe
+
+                </a>
+
+
+                <a class="contact-link"
+                   href="https://app.hackthebox.com/profile/1137416"
+                   target="_blank"
+                   rel="noopener">
+
+                    <i class="fas fa-terminal"></i>
+                    HackTheBox
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
 
 <footer>
-      © <span id="year"></span> Sivaprasad MP — Built for cybersecurity roles • <span class="muted">Made with focus on clarity & reproducible findings</span>
-    </footer>
-  </div>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    // Init AOS
-    AOS.init({duration:700,once:true,easing:'ease-in-out'});
+    <div class="container">
 
-    // Typed.js intro
-    const typed = new Typed('#typed', {
-      strings: [
-        'Cybersecurity Professional',
-        'Penetration Tester',
-        'Bug Bounty Hunter',
-        'CTF Enthusiast',
-        'Network Security Researcher'
-      ],
-      typeSpeed: 55,
-      backSpeed: 30,
-      backDelay: 1600,
-      loop: true
+        © <span id="year"></span>
+        Sivaprasad MP
+        —
+        Cybersecurity Analyst | VAPT | GRC
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     SCRIPTS
+========================== -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+
+    AOS.init({
+        duration: 700,
+        once: true,
+        offset: 60
     });
 
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Contact form handler (simple client-side demo)
-    function handleContact(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const msg = document.getElementById('message').value.trim();
-      if(!name || !email || !msg){alert('Please fill all fields');return}
-      // For GitHub Pages — no backend. Provide mailto fallback
-      const subject = encodeURIComponent('Portfolio contact from '+name);
-      const body = encodeURIComponent('Name: '+name+"\nEmail: "+email+"\n\n"+msg);
-      window.location.href = `mailto:sivaprasadmp21@gmail.com?subject=${subject}&body=${body}`;
-    }
-  </script>
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
