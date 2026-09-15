@@ -1,52 +1,694 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>All Certifications — Sivaprasad MP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body{background:#071017;color:#e6f6fb;font-family:"Inter", sans-serif;margin:0;padding:28px;line-height:1.6}
-    .container{max-width:900px;margin:auto}
-    h1{color:#19d3ff}
-    ul{list-style:none;padding:0}
-    li{background:#0b1720;padding:12px 16px;margin:10px 0;border-radius:10px;border:1px solid rgba(255,255,255,0.05)}
-    .muted{color:#9aa8b2;font-size:14px}
-    a{color:#19d3ff;text-decoration:none}
-    a:hover{color:#7cff6f}
-  </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Certifications | Sivaprasad MP</title>
+
+    <meta name="description"
+          content="Cybersecurity certifications of Sivaprasad MP.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- AOS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+
+    <style>
+
+        :root {
+            --bg: #070b10;
+            --bg-soft: #0b1118;
+            --card: #0d141c;
+
+            --border: rgba(255,255,255,0.08);
+
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+
+            --cyan: #22d3ee;
+            --green: #4ade80;
+
+            --max-width: 1100px;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+
+            font-family: "Inter", sans-serif;
+
+            line-height: 1.7;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        .container {
+            width: min(92%, var(--max-width));
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            background: rgba(7, 11, 16, 0.88);
+
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .nav-inner {
+            min-height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .brand {
+            font-family: "Source Code Pro", monospace;
+
+            font-weight: 600;
+
+            letter-spacing: 1px;
+        }
+
+
+        .brand span {
+            color: var(--cyan);
+        }
+
+
+        .back-link {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            transition: 0.25s;
+        }
+
+
+        .back-link:hover {
+            color: var(--cyan);
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .page-header {
+            padding: 90px 0 50px;
+
+            text-align: center;
+        }
+
+
+        .page-label {
+            color: var(--cyan);
+
+            font-family: "Source Code Pro", monospace;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .page-header h1 {
+            font-size: clamp(38px, 6vw, 60px);
+
+            line-height: 1.1;
+
+            margin-bottom: 15px;
+        }
+
+
+        .page-header h1 span {
+            color: var(--cyan);
+        }
+
+
+        .page-header p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: var(--muted);
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           CERTIFICATIONS
+        ========================== */
+
+        .cert-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 22px;
+
+            padding-bottom: 80px;
+        }
+
+
+        .cert-card {
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            padding: 26px;
+
+            transition: 0.3s;
+        }
+
+
+        .cert-card:hover {
+
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(34, 211, 238, 0.3);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.25);
+        }
+
+
+        .cert-icon {
+
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: rgba(34, 211, 238, 0.08);
+
+            color: var(--cyan);
+
+            font-size: 21px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .cert-code {
+
+            color: var(--green);
+
+            font-family: "Source Code Pro", monospace;
+
+            font-size: 13px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .cert-card h2 {
+
+            font-size: 21px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .cert-issuer {
+
+            color: var(--cyan);
+
+            font-size: 14px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .cert-description {
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================== */
+
+        .bottom-nav {
+
+            text-align: center;
+
+            padding-bottom: 80px;
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 11px 18px;
+
+            border-radius: 8px;
+
+            border: 1px solid var(--border);
+
+            color: var(--text);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.25s;
+        }
+
+
+        .btn:hover {
+
+            border-color: var(--cyan);
+
+            color: var(--cyan);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            border-top: 1px solid var(--border);
+
+            padding: 30px 0;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 750px) {
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header {
+                padding-top: 65px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
-  <div class="container">
-    <h1>All Certifications</h1>
-    <ul>
-      <li>
-        <strong>Certified Ethical Hacker (CEH)</strong> — EC-Council
-        <div class="muted">Focus: Ethical hacking methodologies, penetration testing</div>
-      </li>
-      <li>
-        <strong>Certified AppSec Practitioner (CAP)</strong> — SecOps Group
-        <div class="muted">Focus: Secure coding and application security</div>
-      </li>
-      <li>
-        <strong>Certified Penetration Tester (CPT)</strong> — Redteam hacker accademy
-        <div class="muted">Focus: Advanced penetration testing skills</div>
-      </li>
-      <li>
-        <strong>Web Application Pentesting & Bug Bounty</strong>
-        <div class="muted">Training & practice in web app vulnerabilities</div>
-      </li>
-      <li>
-        <strong>Honors Diploma in Computer Hardware & Networking</strong>
-        <div class="muted">Foundational IT and networking knowledge</div>
-      </li>
-      <li>
-        <strong>ISO/IEC 27001:2022 Information Security Associate</strong>
-        <div class="muted">Foundational GRC and Audit knowledge</div>
-      </li>
-      <!-- Add more if needed -->
-    </ul>
-    <p><a href="index.html">← Back to Portfolio</a></p>
-  </div>
+
+
+<!-- =========================
+     NAVIGATION
+========================== -->
+
+<nav>
+
+    <div class="container nav-inner">
+
+        <a href="index.html"
+           class="brand">
+
+            SIVA<span>.</span>
+
+        </a>
+
+
+        <a href="index.html"
+           class="back-link">
+
+            <i class="fas fa-arrow-left"></i>
+            Back to Portfolio
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+<main>
+
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<section class="page-header">
+
+    <div class="container"
+         data-aos="fade-up">
+
+        <div class="page-label">
+            CERTIFICATIONS
+        </div>
+
+        <h1>
+            Professional <span>Credentials</span>
+        </h1>
+
+        <p>
+            Certifications and professional training supporting
+            my cybersecurity, penetration testing and information
+            security background.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CERTIFICATION CARDS
+========================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="cert-grid">
+
+
+            <!-- CEH -->
+
+            <article class="cert-card"
+                     data-aos="fade-up">
+
+                <div class="cert-icon">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+
+                <div class="cert-code">
+                    CEH
+                </div>
+
+                <h2>
+                    Certified Ethical Hacker
+                </h2>
+
+                <div class="cert-issuer">
+                    EC-Council
+                </div>
+
+                <p class="cert-description">
+                    Professional certification covering ethical
+                    hacking methodologies, vulnerability
+                    assessment and penetration testing concepts.
+                </p>
+
+            </article>
+
+
+            <!-- CPT -->
+
+            <article class="cert-card"
+                     data-aos="fade-up">
+
+                <div class="cert-icon">
+                    <i class="fas fa-crosshairs"></i>
+                </div>
+
+                <div class="cert-code">
+                    CPT
+                </div>
+
+                <h2>
+                    Certified Penetration Tester
+                </h2>
+
+                <div class="cert-issuer">
+                    Professional Certification
+                </div>
+
+                <p class="cert-description">
+                    Focused on penetration testing methodologies,
+                    security assessment and identifying
+                    vulnerabilities in target environments.
+                </p>
+
+            </article>
+
+
+            <!-- CAP -->
+
+            <article class="cert-card"
+                     data-aos="fade-up">
+
+                <div class="cert-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+
+                <div class="cert-code">
+                    CAP
+                </div>
+
+                <h2>
+                    Certified AppSec Practitioner
+                </h2>
+
+                <div class="cert-issuer">
+                    Application Security
+                </div>
+
+                <p class="cert-description">
+                    Focused on application security concepts,
+                    secure development practices and web
+                    application security assessment.
+                </p>
+
+            </article>
+
+
+            <!-- ISO -->
+
+            <article class="cert-card"
+                     data-aos="fade-up">
+
+                <div class="cert-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+
+                <div class="cert-code">
+                    ISO/IEC 27001
+                </div>
+
+                <h2>
+                    Information Security Associate
+                </h2>
+
+                <div class="cert-issuer">
+                    Information Security
+                </div>
+
+                <p class="cert-description">
+                    Training and certification related to
+                    information security management and
+                    ISO/IEC 27001 principles.
+                </p>
+
+            </article>
+
+
+            <!-- WEB PENTESTING -->
+
+            <article class="cert-card"
+                     data-aos="fade-up">
+
+                <div class="cert-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+
+                <div class="cert-code">
+                    WEB SECURITY
+                </div>
+
+                <h2>
+                    Web Application Pentesting & Bug Bounty
+                </h2>
+
+                <div class="cert-issuer">
+                    Web Application Security
+                </div>
+
+                <p class="cert-description">
+                    Training focused on web application security
+                    testing, vulnerability discovery and
+                    bug bounty methodologies.
+                </p>
+
+            </article>
+
+
+            <!-- HARDWARE -->
+
+            <article class="cert-card"
+                     data-aos="fade-up">
+
+                <div class="cert-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+
+                <div class="cert-code">
+                    HARDWARE & NETWORKING
+                </div>
+
+                <h2>
+                    Honors Diploma
+                </h2>
+
+                <div class="cert-issuer">
+                    Computer Hardware and Networking
+                </div>
+
+                <p class="cert-description">
+                    Professional training covering computer
+                    hardware, networking fundamentals and
+                    technical system administration concepts.
+                </p>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- BACK -->
+
+        <div class="bottom-nav">
+
+            <a href="index.html"
+               class="btn">
+
+                <i class="fas fa-arrow-left"></i>
+
+                Back to Portfolio
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="container">
+
+        © <span id="year"></span>
+        Sivaprasad MP
+        —
+        Cybersecurity Analyst | VAPT | GRC
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     SCRIPT
+========================== -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+
+    AOS.init({
+        duration: 650,
+        once: true,
+        offset: 50
+    });
+
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+
 </body>
+
 </html>
