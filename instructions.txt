@@ -1,0 +1,31 @@
+Portfolio instructions
+
+Run locally
+1. Open a terminal in /workspace/my-profile.
+2. Run: python3 -m http.server 8000 --bind 127.0.0.1
+3. Check the pages using a local browser or HTTP client.
+4. Press Ctrl+C to stop the server.
+
+No package installation or build step is required.
+
+Files
+- index.html: Main portfolio content.
+- certifications.html: Certifications and training.
+- styles.css: Shared design and responsive layouts.
+- images/avatar.jpg: Profile photograph.
+- Sivaprasad_mp_(resume).pdf: Downloadable resume.
+
+Content guidelines
+- Keep the main page brief and focused on your security expertise.
+- Leave detailed employment history, education, and tool lists in the resume.
+- Add projects or achievements only when you have accurate supporting details.
+- Keep contact details, profile links, and certifications up to date.
+
+Before publishing
+- Check both pages at desktop and mobile widths.
+- Verify navigation, email, profile links, and the resume download.
+- Confirm there are no browser errors or horizontal scrolling.
+- Publish changes through the repository's GitHub Pages workflow.
+
+The site uses local styles and system fonts; external font, icon, and animation
+services are not required.
