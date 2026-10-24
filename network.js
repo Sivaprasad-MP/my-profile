@@ -30,6 +30,23 @@ async function initializeNetwork() {
   orbit.rotation.set(1.15, 0.35, -0.4);
   group.add(orbit);
   group.rotation.set(0.2, 0.35, -0.18);
+  // A second network fills the entire opening view, including behind the copy.
+  const field = new THREE.Group();
+  scene.add(field);
+  let seed = 471;
+  const random = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
+  const nodes = Array.from({ length: 110 }, () => new THREE.Vector3(random() * 2 - 1, random() * 2 - 1, random() * 0.18 - 0.5));
+  const fieldGeometry = new THREE.BufferGeometry().setFromPoints(nodes);
+  field.add(new THREE.Points(fieldGeometry, new THREE.PointsMaterial({ color: 0xb9d8ff, size: 0.018, transparent: true, opacity: 0.65 })));
+  const connections = [];
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      if (nodes[i].distanceTo(nodes[j]) < 0.3) connections.push(nodes[i], nodes[j]);
+    }
+  }
+  const fieldLines = new THREE.BufferGeometry().setFromPoints(connections);
+  field.add(new THREE.LineSegments(fieldLines, new THREE.LineBasicMaterial({ color: 0x86a9d8, transparent: true, opacity: 0.19 })));
+  let elapsed = 0;
   let pointerX = 0, pointerY = 0, inView = true, lost = false;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   let paused = reduced.matches;
@@ -38,6 +55,10 @@ async function initializeNetwork() {
   function animate(time) {
     const delta = lastTime ? Math.min((time - lastTime) / 1000, 0.05) : 0;
     lastTime = time;
+    elapsed += delta;
+    field.rotation.z = Math.sin(elapsed * 0.12) * 0.025;
+    field.position.x += (pointerX * 0.1 - field.position.x) * 0.025;
+    field.position.y += (-pointerY * 0.1 - field.position.y) * 0.025;
     group.rotation.y += delta * 0.055;
     group.rotation.x += (0.2 + pointerY * 0.16 - group.rotation.x) * 0.025;
     group.rotation.z += (-0.18 + pointerX * 0.08 - group.rotation.z) * 0.025;
@@ -56,6 +77,10 @@ async function initializeNetwork() {
     if (!width || !height) return;
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
+    const halfHeight = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.position.z;
+    field.scale.set(halfHeight * camera.aspect * 1.15, halfHeight * 1.15, 1);
+    group.position.x = width > 600 ? halfHeight * camera.aspect * 0.46 : 0;
+    group.scale.setScalar(width > 600 ? 0.95 : 0.8);
     renderer.setSize(width, height, false);
     if (!lost) render();
   }
